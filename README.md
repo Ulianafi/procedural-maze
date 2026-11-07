@@ -81,15 +81,10 @@ course, written in C++ on top of OpenGL (~2500 lines).
 The project depends on PGR-framework, which is **not included** in this repository. Download it from the
 [PGR course page](https://cent.felk.cvut.cz/courses/PGR/) and either
 
-- put it **next to** this repository:
-  ```
-  some-folder/
-  ├── pgr-framework/     (include/, lib/, bin/ ...)
-  └── procedural-maze/
-  ```
+- put it **next to** the same repository where the project is located
 - or set the environment variable `PGR_FRAMEWORK_ROOT` to its folder (with a trailing backslash, e.g. `C:\libs\pgr-framework\`).
 
-### 2a. Visual Studio (Windows)
+### 2. Visual Studio (Windows)
 
 ```bash
 git clone https://github.com/Ulianafi/procedural-maze.git
@@ -99,15 +94,6 @@ git clone https://github.com/Ulianafi/procedural-maze.git
 2. Select the **Win32** platform (the framework ships 32-bit libraries) and Debug or Release.
 3. Press **F5**. The working directory and the path to the framework DLLs are already set in the project.
 
-### 2b. CMake
-
-```bash
-cmake -S . -B build -DPGR_FRAMEWORK_ROOT=../pgr-framework      # on Windows add: -A Win32
-cmake --build build
-```
-
-On Linux, freeGLUT, Assimp and DevIL must be installed, and `libpgr.a` has to be built from
-`pgr-framework/src` first.
 
 Shaders and `data/` are loaded by relative paths, so **run the executable from the repository root**.
 
