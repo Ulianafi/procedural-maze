@@ -5,8 +5,6 @@ Chunk::Chunk(int gridX, int gridZ, Maze* parentMaze, Material* wallMat, Material
     wallMaterial(wallMat), floorMaterial(floorMat), ceilingMaterial(ceilingMat) {
 }
 
-Chunk::~Chunk() {}
-
 
 
 // Iterates through the local 16x16 grid and populates it by querying

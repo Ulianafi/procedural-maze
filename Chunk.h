@@ -5,7 +5,7 @@
 #include <glm/glm.hpp>
 #include "Objects.h"
 #include "Structures.h"
-#include "Lab.h"
+#include "Maze.h"
 
 class Maze;
 
@@ -20,8 +20,8 @@ public:
     std::vector<LightData> localLamps;
     std::vector<Prop> props;
 
+    // GPU buffers (VAO/VBO/EBO) created in BuildMesh() are released by Object::~Object().
     Chunk(int gridX, int gridZ, Maze* parentMaze, Material* wallMat, Material* floorMat, Material* ceilingMat);   
-    ~Chunk() override;
 
     void GeneratePass1_Structure();     
     void GeneratePass4_Props();     

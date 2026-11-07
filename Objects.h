@@ -14,6 +14,11 @@ public:
 
     virtual ~Object();
 
+    // Object owns its GPU buffers and deletes them in the destructor,
+    // so copying would lead to a double glDelete*/delete.
+    Object(const Object&) = delete;
+    Object& operator=(const Object&) = delete;
+
     virtual void Update();
     /**
      * @brief Renders the object using the provided camera matrices.

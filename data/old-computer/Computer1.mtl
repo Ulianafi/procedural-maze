@@ -1,0 +1,45 @@
+# Идеальный MTL для Computer1.obj (Основано на анализе мешей)
+
+# 1. Корпус монитора
+newmtl Material.002
+Kd 1.0 1.0 1.0
+map_Kd TextureDiff1.png
+map_Bump TextureNormal1.png
+
+newmtl Material.001
+Kd 1.0 1.0 1.0
+map_Kd digits.png
+map_Ke digits.png
+
+# 2. ЭКРАН МОНИТОРА (Светящийся)
+newmtl Material.003
+Kd 1.0 1.0 1.0
+#map_Kd TextureDiff2.png
+map_Kd noise.png
+map_Ke noise.png
+map_Bump TextureNormal1.png
+
+# 3. Системный блок
+newmtl Material.004
+Kd 1.0 1.0 1.0
+map_Kd TextureDiff2.png
+map_Ke TextureEmit2.png
+map_Bump TextureNormal1.png
+
+# 4. Клавиатура
+newmtl Material.005
+Kd 1.0 1.0 1.0
+map_Kd TextureDiff3.png
+map_Bump TextureNormal1.png
+
+# 5. Мышка
+newmtl Material.006
+Kd 1.0 1.0 1.0
+map_Kd TextureDiff4.png
+map_Bump TextureNormal1.png
+
+# 6. Провода (Сделал их просто темными, без текстуры, чтобы не было "каши")
+newmtl Material.007
+Kd 0.1 0.1 0.1
+Ks 0.5 0.5 0.5
+Ns 50.0
