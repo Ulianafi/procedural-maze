@@ -106,8 +106,9 @@ void main() {
         float specSpot = pow(max(dot(viewDir, reflectDirSpot), 0.0), shininess);
         vec3 specularSpot = specularStrength * specSpot * spotColor;
         
-        //phong
+        //phong: diffuse + specular, both limited by the cone and distance
         totalLighting += (diffSpot * spotColor * intensity * attenuation);
+        totalLighting += (specularSpot * intensity * attenuation);
     }
 
     //lamps

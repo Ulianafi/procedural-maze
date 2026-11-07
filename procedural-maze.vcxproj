@@ -22,7 +22,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Chunk.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="Lab.h" />
+    <ClInclude Include="Maze.h" />
     <ClInclude Include="Objects.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Structures.h" />
@@ -31,8 +31,8 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Chunk.cpp" />
     <ClCompile Include="Config.cpp" />
-    <ClCompile Include="filonuli.cpp" />
-    <ClCompile Include="Lab.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectAnomaly.cpp" />
     <ClCompile Include="ObjectSkyBox.cpp" />
@@ -40,9 +40,9 @@
     <ClCompile Include="Structures.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>Asteroids Game</ProjectName>
+    <ProjectName>Backrooms</ProjectName>
     <ProjectGuid>{CFEE11EC-0DD8-4A2D-B2C6-238BF1339E73}</ProjectGuid>
-    <RootNamespace>Asteroids</RootNamespace>
+    <RootNamespace>Backrooms</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -69,7 +69,16 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="UserMacros">
+    <!-- Use the PGR_FRAMEWORK_ROOT environment variable if set, otherwise expect pgr-framework next to this repository. -->
+    <PGR_FRAMEWORK_ROOT Condition="'$(PGR_FRAMEWORK_ROOT)'==''">$(SolutionDir)..\pgr-framework\</PGR_FRAMEWORK_ROOT>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Shaders and data/ are loaded by relative paths; DLLs come from the framework bin/ folder. -->
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=$(PGR_FRAMEWORK_ROOT)bin;%PATH%</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
@@ -95,6 +104,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
@@ -119,6 +129,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>pgr.lib;%(AdditionalDependencies)</AdditionalDependencies>

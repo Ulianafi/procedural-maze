@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <memory>
 
 #include "pgr.h"
 #include <glm/glm.hpp>

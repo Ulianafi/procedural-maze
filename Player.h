@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 #include "Camera.h" 
-#include "Lab.h"
+#include "Maze.h"
 
 enum Player_Movement {
     FORWARD,

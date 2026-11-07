@@ -1,4 +1,4 @@
-#include "Lab.h"
+#include "Maze.h"
 #include "Chunk.h"
 #include <algorithm>
 

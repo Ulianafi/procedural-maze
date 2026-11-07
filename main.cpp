@@ -1,6 +1,6 @@
 //----------------------------------------------------------------------------------------
 /**
- * \file       filonuli.cpp
+ * \file       main.cpp
  * \author     Uliana Filonenko
  * \date       2026/05/19
 */
@@ -14,7 +14,7 @@
 #include "Structures.h"
 #include "Objects.h"
 #include "Camera.h"
-#include "Lab.h"
+#include "Maze.h"
 #include "Player.h"
 
 Material triangleMaterial;

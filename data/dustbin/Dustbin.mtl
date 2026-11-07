@@ -1,0 +1,6 @@
+newmtl aiStandardSurface1SG
+illum 2
+Kd 0.60 0.60 0.60
+Ka 0.20 0.20 0.20
+Ks 0.50 0.50 0.50
+Ns 30.0
